@@ -9,15 +9,15 @@ def index(request):
 
     cities = City.objects.all()
 
+    for city in cities:
+        r = requests.get(url.format(city)).json()
 
-    r = requests.get(url.format(city)).json()
-
-    city_weather = {
-        'city' : city,
-        'temprature' : r['main']['temp'],
-        'description' : r['weather'][0]['description'],
-        'icon' : r['weather'][0]['icon'],
-    }
+        city_weather = {
+            'city' : city,
+            'temprature' : r['main']['temp'],
+            'description' : r['weather'][0]['description'],
+            'icon' : r['weather'][0]['icon'],
+        }
 
     context = {'city_weather' : city_weather}
     return render(request, 'weather_template.html', context)
