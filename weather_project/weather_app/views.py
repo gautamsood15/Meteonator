@@ -5,7 +5,7 @@ from .models import City
 
 def index(request):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=cee83e85f6aa300a481d0bc87650b513'
-    city = ''
+
 
     cities = City.objects.all()
 
@@ -22,6 +22,8 @@ def index(request):
         }
 
         weather_data.append(city_weather)
+
+    print(weather_data)
 
     context = {'city_weather' : city_weather}
     return render(request, 'weather_template.html', context)
