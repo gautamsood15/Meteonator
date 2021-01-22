@@ -23,9 +23,7 @@ def index(request):
 
         weather_data.append(city_weather)
 
-    print(weather_data)
-
-    context = {'city_weather' : city_weather}
+    context = {'weather_data' : city_weather}
     return render(request, 'weather_template.html', context)
 
     
