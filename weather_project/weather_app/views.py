@@ -9,7 +9,7 @@ def index(request):
     if request.method == 'POST':
         pass
 
-
+    form = CityForm()
 
 
     cities = City.objects.all()
