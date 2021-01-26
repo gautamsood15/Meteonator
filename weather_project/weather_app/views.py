@@ -29,7 +29,7 @@ def index(request):
 
         weather_data.append(city_weather)
 
-    context = {'weather_data' : weather_data}
+    context = {'weather_data' : weather_data, 'form' : form}
     return render(request, 'weather_template.html', context)
 
     
