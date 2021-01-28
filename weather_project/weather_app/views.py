@@ -2,6 +2,7 @@ import requests
 from django.shortcuts import render
 from .models import City
 from .forms import CityForm
+from django.http import HttpResponseRedirect
 
 def index(request):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=cee83e85f6aa300a481d0bc87650b513'
@@ -9,6 +10,8 @@ def index(request):
     if request.method == 'POST':
         form = CityForm(request.POST)
         form.save()
+
+        return HttpResponseRedirect("/")
 
     form = CityForm()
 
