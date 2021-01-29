@@ -1,5 +1,5 @@
 from typing import Text
-from django.forms import ModelForm, TextInput, widgets
+from django.forms import ModelForm, TextInput, models, widgets
 from .models import City
 
 class CityForm(ModelForm):
