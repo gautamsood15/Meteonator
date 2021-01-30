@@ -37,5 +37,6 @@ def index(request):
     return render(request, 'weather_template.html', context)
 
     
-def search(index):
-    pass
+def search(request):
+    
+    return render(request, 'search_template.html')
