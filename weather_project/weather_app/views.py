@@ -41,7 +41,6 @@ def search(request):
 
     if request.method == 'POST':
         search_query = request.POST['name']
-        print(search_query)
 
 
         return HttpResponseRedirect("/search")
