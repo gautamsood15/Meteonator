@@ -42,7 +42,7 @@ def search(request):
     if request.method == 'POST':
         search_query = request.POST['name']
 
-        search_result = City.objects.filter()
+        search_result = City.objects.filter(name__contains=search_query)
 
         return HttpResponseRedirect("/search")
 
