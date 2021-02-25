@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1x@9ax)5atk54gt+tr!kq&r6u#@n9tm%futa=jntajj438k0^c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['still-reaches-28292.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['still-reaches-28292.herokuapp.com', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -77,8 +77,13 @@ WSGI_APPLICATION = 'weather_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dcg4b9fe9dkf6k',
+        'HOST': 'ec2-3-218-71-191.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'ytzyeswvsfrboc',
+        'PASSWORD': '368d5a63663b10cadd0229916738208fc14ac155a34eabec420cea619582ee82'
+
     }
 }
 
