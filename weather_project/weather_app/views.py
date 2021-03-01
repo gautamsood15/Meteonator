@@ -43,8 +43,12 @@ def search(request):
         search_query = request.POST['name']
 
         search_result = City.objects.filter(name__contains=search_query)
+        for x in search_result:
+            print(x)
+        search_form = SearchForm()
 
-        return HttpResponseRedirect("/search")
+        context = {'search_result' : search_result, 'search_form' : search_form}
+        return render(request, 'search_template.html', context)
 
 
 
