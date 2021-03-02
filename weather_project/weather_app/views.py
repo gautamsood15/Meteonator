@@ -43,10 +43,18 @@ def search(request):
         search_query = request.POST['name']
         search_result = City.objects.filter(name__contains=search_query)
         
+        weather_data = []
+
         for city in search_result:
             r = requests.get(url.format(city)).json()
-            
-            
+            city_weather = {
+                'city' : city.name,
+                'temprature' : r['main']['temp'],
+                'description' : r['weather'][0]['description'],
+                'icon' : r['weather'][0]['icon'],
+            }           
+
+            weather_data.append(city_weather)
 
 
 
