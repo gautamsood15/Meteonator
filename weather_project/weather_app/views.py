@@ -56,6 +56,10 @@ def search(request):
 
             weather_data.append(city_weather)
 
+        context = {'weather_data' : weather_data}
+        return render(request, 'search_template.html', context)
+        
+
 
 
     search_form = SearchForm()
