@@ -7,6 +7,7 @@
 The application uses OpenWeatherMap API to provide the weather data. The application allows users to select a city and based on the city
 it shows the weather of that city. For the Frontend application uses Bootstrap CSS
 
+Click on link to visit the [Meteonator](https://murmuring-sea-78177.herokuapp.com/) 
 
 ## Credentials
 
