@@ -13,8 +13,8 @@ def index(request):
         'description' : r['weather'][0]['description'],
         'icon' : r['weather'][0]['icon'],
     }
-    print(city_weather)
 
-    return render(request, 'weather_template.html')
+    context = {'city_weather' : city_weather}
+    return render(request, 'weather_template.html', context)
 
     
