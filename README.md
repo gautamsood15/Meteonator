@@ -8,5 +8,9 @@ it shows the weather of that city.
 
 ## Credentials
 
--> Superuser: username - gautam, email - gautam@gamil.com, password - 12345
+### Superuser Credentials: 
+
+--> username - gautam
+--> email - gautam@gamil.com
+--> password - 12345
 
