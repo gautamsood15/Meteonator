@@ -8,12 +8,11 @@ def index(request):
     r = requests.get(url.format(city)).json()
 
     city_weather = {
-        'city' : ,
-        'temprature' : ,
-        'description' : ,
-        'icon' : ,
+        'city' : city,
+        'temprature' : r['main']['temp'],
+        'description' : r['weather'][0]['description'],
+        'icon' : r['weather'][0]['icon'],
     }
-
 
 
     return render(request, 'weather_template.html')
