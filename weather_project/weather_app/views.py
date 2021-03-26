@@ -6,7 +6,7 @@ def index(request):
     city = 'Las Vegas'
 
     r = request.get(url.format(city))
-    #print(r.text)
+    print(r.text)
 
 
 
