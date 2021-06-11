@@ -1,7 +1,7 @@
 import requests
 from django.shortcuts import render
 from .models import City
-from .forms import CityForm
+from .forms import CityForm, SearchForm
 from django.http import HttpResponseRedirect
 
 def index(request):
@@ -38,5 +38,8 @@ def index(request):
 
     
 def search(request):
-    
-    return render(request, 'search_template.html')
+
+    search_form = SearchForm()
+
+    context = {'search_form' : search_form}
+    return render(request, 'search_template.html', context)
