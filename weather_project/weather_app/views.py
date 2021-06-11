@@ -39,6 +39,15 @@ def index(request):
     
 def search(request):
 
+    if request.method == 'POST':
+        search_query = request.POST['name']
+        print(search_query)
+
+
+        return HttpResponseRedirect("/search")
+
+
+
     search_form = SearchForm()
 
     context = {'search_form' : search_form}
