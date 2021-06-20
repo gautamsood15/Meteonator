@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1x@9ax)5atk54gt+tr!kq&r6u#@n9tm%futa=jntajj438k0^c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -50,7 +50,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'weather_project.urls'
@@ -79,13 +78,8 @@ WSGI_APPLICATION = 'weather_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbj7qa68os4sju',
-        'HOST': 'ec2-52-4-111-46.compute-1.amazonaws.com',
-        'PORT': 5432,
-        'USER': 'arbibgbifjmxmq',
-        'PASSWORD': 'd704168de0b45f314e46e27e43e313ee8cc9193f8c21020e6a2161a1636696b8'
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'sqlite3',
     }
 }
 
@@ -127,7 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
